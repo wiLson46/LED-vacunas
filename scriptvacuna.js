@@ -73,7 +73,7 @@ function fn2(inp1, inp2, inp3) {
 
 function fnAlertaOK() {
     document.getElementById("alertaOK").classList.remove("d-none");
-    setTimeout(() => { document.getElementById("alertaOK").classList.add("d-none") }, 7000);
+    setTimeout(function() { document.getElementById("alertaOK").classList.add("d-none") }, 7000);
 };
 
 function updateTable() {
