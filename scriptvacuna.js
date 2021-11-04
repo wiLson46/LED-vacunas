@@ -65,34 +65,45 @@ function fn() {
 };
 
 function fn2(inp1, inp2, inp3) {
+
     document.getElementById(inp2).innerHTML = inp1;
     var mesj = "usted debe recibir la vacuna " + inp3;
     document.getElementById("alertaOK").innerHTML = mesj;
     fnAlertaOK(mesj);
+
 };
 
 function fnAlertaOK() {
+
     document.getElementById("alertaOK").classList.remove("d-none");
     setTimeout(function() { document.getElementById("alertaOK").classList.add("d-none") }, 7000);
+
 };
 
 function updateTable() {
+
     fnDesperdicios(d1, vacua, contadorVac1);
     fnDesperdicios(d2, vacub, contadorVac2);
     fnDesperdicios(d3, vacuc, contadorVac3);
     fnDesperdicios(d4, vacud, contadorVac4);
+
 };
 
 function showTable() {
+
     document.getElementById("listaDesperdicios").classList.toggle("d-none");
+
 };
 function showTable2() {
+
     document.getElementById("listaDNI").classList.toggle("d-none");
     cleanTable2();
     fn3();
+
 };
 
 function fnDesperdicios(par1, par2, par3) {
+
     if (par3 == 0) {
         document.getElementById(par1).innerHTML = "Nadie utilizo la vacuna " + par2 + ", el frasco de 5 esta sin abrir";
     } else if (par3 > 5) {
@@ -100,15 +111,18 @@ function fnDesperdicios(par1, par2, par3) {
     } else {
         document.getElementById(par1).innerHTML = "se desperdiciaron de la vacuna " + par2 + ": " + (5 - par3) + " vacunas";
     };
+
 };
 
 function masDesp(x) {
+
     if ((5 - (x % 5)) == 5) {
         x = 0;
     } else {
         5 - (x % 5);
-    }
-}
+    };
+
+};
 
 function fn3() {
 
@@ -121,16 +135,20 @@ function fn3() {
             li.classList.add("list-group-item");
             li.innerHTML = listadoDNI[i];
             ol.appendChild(li);
-        }
-    }
+        };
+    };
+
 };
 
 function cleanTable2() {
+
     var myNode = document.getElementById("listaDNI");
     myNode.innerHTML = "";
+
 };
 
 function cleanLists() {
+
     contadorTot = 0;
     contadorVac0 = 0;
     contadorVac1 = 0;
@@ -154,8 +172,11 @@ function cleanLists() {
     document.getElementById("addV4").innerHTML = vacud;
     listadoDNI = [];
     cleanTable2();
+
 };
 
 window.onload = function () {
+
     cleanLists();
+    
 };
