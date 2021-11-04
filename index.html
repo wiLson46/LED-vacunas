@@ -48,7 +48,10 @@
       Se encontro un error con el numero ingresado. Ingrese uno nuevo.
     </div>
 
-    <ol class="list-group py-5 col-12">
+    <p class="text-center pt-4"><span class="fs-2">Total de vacunas utilizadas</span><span id="showTV"
+      class="fs-1 fw-bold px-2">0</span></p>
+
+    <ol class="list-group py-4 col-12">
       <li class="list-group-item d-flex justify-content-between align-items-start">
         <div class="ms-2 me-auto">
           <div class="fw-bold">No reciben vacuna</div>
@@ -81,12 +84,11 @@
       </li>
     </ol>
 
-    <p class="text-center"><span class="fs-2">Total de vacunas utilizadas</span><span id="showTV"
-        class="fs-1 fw-bold px-2">0</span></p>
+    
 
     <button type="button" class="btn btn-info m-1 col-12" onclick="showTable()">Chequear desperdicios</button>
 
-    <ul id="listaDesperdicios" class="list-group py-5 col-12 d-none">
+    <ul id="listaDesperdicios" class="list-group py-4 col-12 d-none">
       <li id="despe1" class="list-group-item"></li>
       <li id="despe2" class="list-group-item"></li>
       <li id="despe3" class="list-group-item"></li>
@@ -94,7 +96,7 @@
     </ul>
 
     <button type="button" class="btn btn-secondary m-1 col-12" onclick="showTable2()">Consultar DNI vacunados</button>
-    <ul id="listaDNI" class="list-group py-5 col-12 d-none">
+    <ul id="listaDNI" class="list-group py-4 col-12 d-none">
 
     </ul>
 
@@ -114,11 +116,15 @@
         <div class="modal-body">
 
           <ul>
-            <li>0-3 no se vacuna</li>
-            <li>4-12 vacuna 1</li>
-            <li>13-17 vacuna 2</li>
-            <li>18-60 vacuna 3</li>
-            <li>60+ vacuna 4</li>
+            <li>0-3 años - no se vacuna</li>
+            <li>4-12 años - vacuna 1</li>
+            <li>13-17 años - vacuna 2</li>
+            <li>18-60 años - vacuna 3</li>
+            <li>60+ años - vacuna 4</li>
+          </ul>
+          <ul>
+            <li>Las vacunas vienen en paquetes de a 5 unidades, por lo que los sobrantes se calcularan con esa base.</li>
+         
           </ul>
 
         </div>

@@ -27,8 +27,6 @@ var listadoDNI = [];
 
 function fn() {
 
-    // falta si valor nada o simbolo
-    //mostrar array en nuevo boton
     var ingreso = document.getElementById("ingreso").value;
     var dniValue = document.getElementById("ingDNI").value;
 
@@ -79,7 +77,6 @@ function fnAlertaOK() {
 };
 
 function updateTable() {
-
     fnDesperdicios(d1, vacua, contadorVac1);
     fnDesperdicios(d2, vacub, contadorVac2);
     fnDesperdicios(d3, vacuc, contadorVac3);
@@ -99,20 +96,32 @@ function fnDesperdicios(par1, par2, par3) {
     if (par3 == 0) {
         document.getElementById(par1).innerHTML = "Nadie utilizo la vacuna " + par2 + ", el frasco de 5 esta sin abrir";
     } else if (par3 > 5) {
-        document.getElementById(par1).innerHTML = "se desperdiciaron de la vacuna " + par2 + ": " + (5 - (par3 % 5));
+        document.getElementById(par1).innerHTML = "se desperdiciaron de la vacuna " + par2 + ": " + masDesp(par3) + " vacunas";
     } else {
-        document.getElementById(par1).innerHTML = "se desperdiciaron de la vacuna " + par2 + ": " + (5 - par3);
+        document.getElementById(par1).innerHTML = "se desperdiciaron de la vacuna " + par2 + ": " + (5 - par3) + " vacunas";
     };
 };
 
+function masDesp(x) {
+    if ((5 - (x % 5)) == 5) {
+        x = 0;
+    } else {
+        5 - (x % 5);
+    }
+}
+
 function fn3() {
 
-    var ol = document.getElementById("listaDNI");
-    for (let i = 0; i < listadoDNI.length; i++) {
-        let li = document.createElement("li");
-        li.classList.add("list-group-item");
-        li.innerHTML = listadoDNI[i];
-        ol.appendChild(li);
+    if (listadoDNI.length === 0){
+        document.getElementById("listaDNI").innerHTML = "Aun no se cargo ningun DNI.";
+    } else {
+        var ol = document.getElementById("listaDNI");
+        for (let i = 0; i < listadoDNI.length; i++) {
+            let li = document.createElement("li");
+            li.classList.add("list-group-item");
+            li.innerHTML = listadoDNI[i];
+            ol.appendChild(li);
+        }
     }
 };
 
