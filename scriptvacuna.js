@@ -30,28 +30,34 @@ function fn() {
     var ingreso = document.getElementById("ingreso").value;
     var dniValue = document.getElementById("ingDNI").value;
 
-    listadoDNI.push(dniValue);
-
-    contadorTot = contadorTot + 1;
-
-    if (ingreso >= 0 && ingreso <= 3) {
+    if (ingreso >= 0 && ingreso <= 3 && isNaN(dniValue) === false) {
         contadorVac0++;
         document.getElementById("vacu0").innerHTML = contadorVac0;
         var mesj = "usted no debe recibir vacuna";
         document.getElementById("alertaOK").innerHTML = mesj;
         fnAlertaOK(mesj);
-    } else if (ingreso >= 4 && ingreso <= 12) {
+        listadoDNI.push(dniValue);
+        contadorTot = contadorTot + 1;
+    } else if (ingreso >= 4 && ingreso <= 12 && isNaN(dniValue) === false) {
         contadorVac1++;
         fn2(contadorVac1, iv1, vacua);
-    } else if (ingreso >= 13 && ingreso <= 17) {
+        listadoDNI.push(dniValue);
+        contadorTot = contadorTot + 1;
+    } else if (ingreso >= 13 && ingreso <= 17 && isNaN(dniValue) === false) {
         contadorVac2++;
         fn2(contadorVac2, iv2, vacub);
-    } else if (ingreso >= 18 && ingreso <= 60) {
+        listadoDNI.push(dniValue);
+        contadorTot = contadorTot + 1;
+    } else if (ingreso >= 18 && ingreso <= 60 && isNaN(dniValue) === false) {
         contadorVac3++;
         fn2(contadorVac3, iv3, vacuc);
-    } else if (ingreso >= 60) {
+        listadoDNI.push(dniValue);
+        contadorTot = contadorTot + 1;
+    } else if (ingreso >= 60 && isNaN(dniValue) === false) {
         contadorVac4++;
         fn2(contadorVac4, iv4, vacud);
+        listadoDNI.push(dniValue);
+        contadorTot = contadorTot + 1;
     } else {
         document.getElementById("alertaNO").classList.remove("d-none");
         setTimeout(() => { document.getElementById("alertaNO").classList.add("d-none") }, 7000);
